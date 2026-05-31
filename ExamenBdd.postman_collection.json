@@ -1,0 +1,123 @@
+{
+  "info": {
+    "_postman_id": "0757c984-da48-4eff-88ec-66d87e5c8d8d",
+    "name": "ExamenBdd",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50947747",
+    "_collection_link": "https://go.postman.co/collection/50947747-0757c984-da48-4eff-88ec-66d87e5c8d8d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "CrearVuelo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"codigo\": \"AA-123\",\r\n  \"precioBoleto\": 250.00,\r\n  \"asientosDisponibles\": 120\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vuelos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vuelos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarVuelos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vuelos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vuelos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ListarPorId",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "EditarVuelo",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"codigo\": \"AN-123\",\r\n  \"precioBoleto\": 400.00,\r\n  \"asientosDisponibles\": 100\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vuelos/6",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vuelos",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EliminarVuelo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vuelos/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vuelos",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buscarPorPrecio",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
