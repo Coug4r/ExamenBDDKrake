@@ -37,3 +37,6 @@ WHERE id = 3;
 DELETE FROM vuelos
 WHERE asientos_disponibles = 0;
 
+select * from vuelos
+
+ALTER TABLE vuelos ADD COLUMN destino VARCHAR(100);
