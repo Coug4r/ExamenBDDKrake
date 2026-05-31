@@ -56,6 +56,7 @@ public class VueloServicios {
                         vuelo.setCodigo(vueloActualizado.getCodigo());
                         vuelo.setPrecioBoleto(vueloActualizado.getPrecioBoleto());
                         vuelo.setAsientosDisponibles(vueloActualizado.getAsientosDisponibles());
+                        vuelo.setDestino(vueloActualizado.getDestino());
                         return vueloRepository.save(vuelo);
                     })
                     .orElse(null);

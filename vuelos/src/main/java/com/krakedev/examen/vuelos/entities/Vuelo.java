@@ -19,15 +19,19 @@ public class Vuelo {
 
     @Column(name = "asientos_disponibles", nullable = false)
     private Integer asientosDisponibles;
+    
+    @Column(name = "destino", length = 100) 
+    private String destino;
 
     // 🔹 Constructores
     public Vuelo() {
     }
 
-    public Vuelo(String codigo, BigDecimal precioBoleto, Integer asientosDisponibles) {
+    public Vuelo(String codigo, BigDecimal precioBoleto, Integer asientosDisponibles, String destino) {
         this.codigo = codigo;
         this.precioBoleto = precioBoleto;
         this.asientosDisponibles = asientosDisponibles;
+        this.destino = destino;
     }
 
     // 🔹 Getters y Setters
@@ -62,15 +66,18 @@ public class Vuelo {
     public void setAsientosDisponibles(Integer asientosDisponibles) {
         this.asientosDisponibles = asientosDisponibles;
     }
+    
+    public String getDestino() {
+		return destino;
+	}
 
-    // 🔹 toString para depuración
-    @Override
-    public String toString() {
-        return "Vuelo{" +
-                "id=" + id +
-                ", codigo='" + codigo + '\'' +
-                ", precioBoleto=" + precioBoleto +
-                ", asientosDisponibles=" + asientosDisponibles +
-                '}';
-    }
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+
+	@Override
+	public String toString() {
+		return "Vuelo [id=" + id + ", codigo=" + codigo + ", precioBoleto=" + precioBoleto + ", asientosDisponibles="
+				+ asientosDisponibles + ", destino=" + destino + "]";
+	}
 }
