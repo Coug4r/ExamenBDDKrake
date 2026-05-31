@@ -1,9 +1,10 @@
 package com.krakedev.examen.vuelos.services;
 
+import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.krakedev.examen.vuelos.entities.Vuelo;
@@ -12,9 +13,11 @@ import com.krakedev.examen.vuelos.repositories.VueloRepository;
 @Service
 public class VueloServicios {
 
-    @Autowired
+    
     private VueloRepository vueloRepository;
-
+    public VueloServicios(VueloRepository vueloRepository) {
+        this.vueloRepository = vueloRepository;
+    }
     //  Crear un nuevo vuelo
     public Vuelo crearVuelo(Vuelo vuelo) {
         try {
@@ -75,4 +78,14 @@ public class VueloServicios {
             return false;
         }
     }
+    // Buscar por precios menores a
+    public List<Vuelo> buscarPorPreciosMenor(BigDecimal precio) {
+        try {
+            return vueloRepository.findByPrecioBoletoLessThan(precio);
+        } catch(Exception e) {
+            System.err.println("Error al buscar vuelos: " + e.getMessage());
+            return Collections.emptyList(); 
+        }
+    }
+
 }

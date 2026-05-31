@@ -1,5 +1,6 @@
 package com.krakedev.examen.vuelos.controllers;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -73,5 +74,14 @@ public class VueloController {
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("Vuelo con id " + id + " no encontrado");
+    }
+    @GetMapping("/precio/{precio}")
+    public ResponseEntity<?> buscarPorPrecioBajo(@PathVariable BigDecimal precio){
+    	List<Vuelo> vuelos = vueloService.buscarPorPreciosMenor(precio);
+    	if(vuelos!=null) {
+    		return ResponseEntity.ok(vuelos);
+    	}else {
+    		return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontraron vuelos con ese precio!");
+    	}
     }
 }
